@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="https://portal.rosreestr.ru/xsl/GKN/Vidimus/06/common.xsl"?>
+
+<KVZU xmlns="urn://x-artefacts-rosreestr-ru/outgoing/kvzu/6.0.9"
+xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1"
+xmlns:num="urn://x-artefacts-rosreestr-ru/commons/complex-types/numbers/1.0"
+xmlns:adrs="urn://x-artefacts-rosreestr-ru/commons/complex-types/address-output/3.0.1"
+xmlns:spa="urn://x-artefacts-rosreestr-ru/commons/complex-types/entity-spatial/2.0.1"
+xmlns:cer="urn://x-artefacts-rosreestr-ru/commons/complex-types/certification-doc/1.0"
+xmlns:doc="urn://x-artefacts-rosreestr-ru/commons/complex-types/document-output/3.0.1"
+xmlns:nobj="urn://x-artefacts-rosreestr-ru/commons/complex-types/natural-objects/1.0.1">
+<Parcels>
+<Parcel CadastralNumber="48:16:0990210:23" State="01"
+DateCreated="2004-12-23"
+DateCreatedDoc="2001-01-01"
+>
+<CadastralBlock>48:16:0990210</CadastralBlock>
+<Name>01</Name>
+<Area>
+<Area>1500</Area>
+<Unit>055</Unit>
+</Area>
+<Location>
+<inBounds>1</inBounds>
+<Address> <adrs:OKATO>42248824002</adrs:OKATO>
+<adrs:KLADR>48016000039001400</adrs:KLADR>
+<adrs:Region>48</adrs:Region>
+<adrs:District Name="Усманский" Type="р-н" />
+<adrs:City Name="Девицкий сельсовет" Type="с/п" />
+<adrs:Locality Name="Новоуглянка" Type="с" />
+<adrs:Street Name="Свободная" Type="ул" />
+<adrs:Level1 Type="д" Value="13" />
+<adrs:Note>Липецкая обл, р-н Усманский, с/п Девицкий сельсовет, с Новоуглянка, ул Свободная, д 13</adrs:Note>
+</Address>
+</Location>
+<Category>003002000000</Category>
+<Utilization ByDoc="для ведения личного подсобного хозяйства" />
+<Rights>
+<Right>
+<Name>право общей долевой собственности</Name>
+<Type>001002000000</Type>
+<Owners>
+<Owner>
+<Person>
+<FamilyName>Дзюбаненко</FamilyName>
+<FirstName>Валентина</FirstName>
+<Patronymic>Егоровна</Patronymic>
+</Person>
+</Owner>
+</Owners>
+<Share Numerator="3" Denominator="4" />
+<Registration>
+<RegNumber>48-48-10/012/2012-596</RegNumber>
+<RegDate>2012-10-23</RegDate>
+</Registration>
+</Right>
+</Rights>
+<CadastralCost Value="64395" Unit="383" />
+<SpecialNote>Граница земельного участка не установлена в соответствии с требованиями земельного законодательства. </SpecialNote>
+</Parcel>
+</Parcels>
+<CertificationDoc>
+<cer:Organization>Федеральный информационный ресурс</cer:Organization>
+<cer:Date>2016-08-02</cer:Date>
+<cer:Number>99/2016/5856622</cer:Number>
+</CertificationDoc>
+<CoordSystems>
+<spa:CoordSystem Name="МСК-48" CsId="ID0" />
+</CoordSystems>
+</KVZU>

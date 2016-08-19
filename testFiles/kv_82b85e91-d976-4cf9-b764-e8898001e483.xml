@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="https://portal.rosreestr.ru/xsl/GKN/Vidimus/06/common.xsl"?>
+
+<KVZU xmlns="urn://x-artefacts-rosreestr-ru/outgoing/kvzu/6.0.9"
+xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1"
+xmlns:num="urn://x-artefacts-rosreestr-ru/commons/complex-types/numbers/1.0"
+xmlns:adrs="urn://x-artefacts-rosreestr-ru/commons/complex-types/address-output/3.0.1"
+xmlns:spa="urn://x-artefacts-rosreestr-ru/commons/complex-types/entity-spatial/2.0.1"
+xmlns:cer="urn://x-artefacts-rosreestr-ru/commons/complex-types/certification-doc/1.0"
+xmlns:doc="urn://x-artefacts-rosreestr-ru/commons/complex-types/document-output/3.0.1"
+xmlns:nobj="urn://x-artefacts-rosreestr-ru/commons/complex-types/natural-objects/1.0.1">
+<Parcels>
+<Parcel CadastralNumber="48:16:0990210:27" State="01"
+DateCreated="2001-01-01"
+>
+<CadastralBlock>48:16:0990210</CadastralBlock>
+<Name>01</Name>
+<Area>
+<Area>600</Area>
+<Unit>055</Unit>
+<Inaccuracy>17</Inaccuracy>
+</Area>
+<Location>
+<inBounds>1</inBounds>
+<Placed>А0</Placed>
+<Address> <adrs:OKATO>42248824002</adrs:OKATO>
+<adrs:KLADR>48016000039001200</adrs:KLADR>
+<adrs:Region>48</adrs:Region>
+<adrs:District Name="Усманский" Type="р-н" />
+<adrs:City Name="Девицкий сельсовет" Type="сельское поселение" />
+<adrs:Locality Name="Новоуглянка" Type="с" />
+<adrs:Street Name="Мира" Type="ул" />
+<adrs:Level1 Type="д" Value="3" />
+<adrs:Note>обл. Липецкая, р-н Усманский, сельское поселение Девицкий сельсовет, с. Новоуглянка, ул. Мира, дом 3</adrs:Note>
+</Address>
+</Location>
+<Category>003002000000</Category>
+<Utilization ByDoc="для ведения личного подсобного хозяйства" />
+<Rights>
+<Right>
+<Name>право собственности</Name>
+<Type>001001000000</Type>
+<Owners>
+<Owner>
+<Person>
+<FamilyName>Кобзева</FamilyName>
+<FirstName>Анна</FirstName>
+<Patronymic>Михайловна</Patronymic>
+</Person>
+</Owner>
+</Owners>
+<Registration>
+<RegNumber>48-48-10/003/2014-631</RegNumber>
+<RegDate>2014-04-22</RegDate>
+</Registration>
+</Right>
+<Right>
+<Name>постоянное бессрочное пользование</Name>
+<Type>001007000000</Type>
+<Owners>
+<Owner>
+<Person>
+<FamilyName>Клейменов</FamilyName>
+<FirstName>Владимир</FirstName>
+<Patronymic>Иванович</Patronymic>
+</Person>
+</Owner>
+</Owners>
+</Right>
+</Rights>
+<EntitySpatial EntSys="ID0" >
+<spa:SpatialElement >
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="1" >
+<spa:Ordinate X="354477.03" Y="1336773.5" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="2" >
+<spa:Ordinate X="354480.04" Y="1336789.11" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="3" >
+<spa:Ordinate X="354481.71" Y="1336793.87" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="4" >
+<spa:Ordinate X="354509.79" Y="1336784.8" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="5" >
+<spa:Ordinate X="354507.1" Y="1336765.39" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="6" >
+<spa:Ordinate X="354493.92" Y="1336766.72" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="7" >
+<spa:Ordinate X="354495.16" Y="1336772.11" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="8" >
+<spa:Ordinate X="354480.04" Y="1336773.22" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+<spa:SpelementUnit TypeUnit="Точка" SuNmb="1" >
+<spa:Ordinate X="354477.03" Y="1336773.5" OrdNmb="1" DeltaGeopoint="0.3" />
+</spa:SpelementUnit>
+</spa:SpatialElement>
+<spa:Borders>
+<spa:Border Spatial="1" Point1="137" Point2="138">
+<spa:Edge>
+</spa:Edge>
+</spa:Border>
+<spa:Border Spatial="1" Point1="154" Point2="155">
+<spa:Edge>
+</spa:Edge>
+</spa:Border>
+<spa:Border Spatial="1" Point1="155" Point2="156">
+<spa:Edge>
+</spa:Edge>
+</spa:Border>
+<spa:Border Spatial="1" Point1="156" Point2="157">
+<spa:Edge>
+</spa:Edge>
+</spa:Border>
+<spa:Border Spatial="1" Point1="138" Point2="157">
+<spa:Edge>
+</spa:Edge>
+</spa:Border>
+<spa:Border Spatial="1" Point1="137" Point2="158">
+<spa:Edge>
+</spa:Edge>
+</spa:Border>
+<spa:Border Spatial="1" Point1="158" Point2="159">
+<spa:Edge>
+</spa:Edge>
+</spa:Border>
+<spa:Border Spatial="1" Point1="154" Point2="159">
+<spa:Edge>
+</spa:Edge>
+</spa:Border>
+</spa:Borders>
+</EntitySpatial>
+<CadastralCost Value="25758" Unit="383" />
+</Parcel>
+</Parcels>
+<CertificationDoc>
+<cer:Organization>Федеральный информационный ресурс</cer:Organization>
+<cer:Date>2016-08-02</cer:Date>
+<cer:Number>99/2016/5856621</cer:Number>
+</CertificationDoc>
+<CoordSystems>
+<spa:CoordSystem Name="МСК-48" CsId="ID0" />
+</CoordSystems>
+</KVZU>
