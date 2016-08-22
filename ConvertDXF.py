@@ -158,7 +158,11 @@ class Window(QtGui.QMainWindow):
                 error = QtGui.QErrorMessage()
                 error.showMessage("Произошла ошибка при открытии файла %s" % path_to_file)
             msp = dxf.modelspace()
-            if len(list(msp.query("LWPOLYLINE"))) > 1:
+            if dxf.dxfversion == "AC1009":
+                polyline = list(msp.querry("POLYLINE"))
+            else:
+                polyline = list(msp.query("LWPOLYLINE"))
+            if len(polyline) > 1:
                 path_to_convert = os.path.normpath(path_to_save +"\\"+name+"_converted")
                 os.mkdir(path_to_convert)
                 i = 0
@@ -169,13 +173,13 @@ class Window(QtGui.QMainWindow):
                             y = round(point[1], 2)
                             conv.write(str(x) + ";" + str(y) + "\n")
                     i += 1
-            elif len(list(msp.query("LWPOLYLINE"))) == 1:
+            elif len(polyline) == 1:
                 with open(path_to_save + "_converted.csv", "w") as conv:
                     for point in list(msp.query('LWPOLYLINE')[0]):
                         x = round(point[0], 2)
                         y = round(point[1], 2)
                         conv.write(str(x) + ";" + str(y) + "\n")
-            elif len(list(msp.query("LWPOLYLINE"))) == 0:
+            elif len(polyline) == 0:
                 msgBox = QtGui.QMessageBox()
                 msgBox.question(msgBox, "Внимание!", "На чертеже отсутствуют полилинии!", msgBox.Ok)
         self.settings["lastdirectory"] = path_to_file
