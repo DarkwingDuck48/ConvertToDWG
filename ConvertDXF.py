@@ -158,10 +158,12 @@ class Window(QtGui.QMainWindow):
                 error = QtGui.QErrorMessage()
                 error.showMessage("Произошла ошибка при открытии файла %s" % path_to_file)
             msp = dxf.modelspace()
+
             if dxf.dxfversion == "AC1009":
                 polyline = list(msp.querry("POLYLINE"))
             else:
                 polyline = list(msp.query("LWPOLYLINE"))
+                
             if len(polyline) > 1:
                 path_to_convert = os.path.normpath(path_to_save +"\\"+name+"_converted")
                 os.mkdir(path_to_convert)
