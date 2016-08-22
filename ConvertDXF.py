@@ -3,7 +3,7 @@ import os
 import sys
 
 from PyQt4 import QtGui, QtCore
-
+from ezdxf.lldxf.const import DXFStructureError
 
 class Window(QtGui.QMainWindow):
     def __init__(self, parent=None):
@@ -122,7 +122,6 @@ class Window(QtGui.QMainWindow):
                 link = os.path.normpath(self.path_to_file.text())
             filename = QtGui.QFileDialog.getExistingDirectory(self.centralWidget, "Save file", link)
             self.path_to_save.setText(filename)
-        return link
 
     def cleartext(self):
         self.path_to_file.clear()
@@ -138,7 +137,6 @@ class Window(QtGui.QMainWindow):
             save_to = os.path.normpath(path_to_save + '\\' + name + ".dxf")
             key = self.dxf_version.itemText(self.dxf_version.currentIndex())
             coords = []
-
             with open(path_to_file, 'r') as csv:
                 for line in csv:
                     good_coord = ''
@@ -154,8 +152,32 @@ class Window(QtGui.QMainWindow):
             msp.add_lwpolyline(points)
             dxf.saveas(save_to)
         if str(path_to_file)[-4:] == ".dxf":
-            msgBox = QtGui.QMessageBox(self)
-            msgBox.question(msgBox,"Не рефлизовано", "Поддержка dxf не реализована")
+            try:
+                dxf = ezdxf.readfile(path_to_file)
+            except DXFStructureError:
+                error = QtGui.QErrorMessage()
+                error.showMessage("Произошла ошибка при открытии файла %s" % path_to_file)
+            msp = dxf.modelspace()
+            if len(list(msp.query("LWPOLYLINE"))) > 1:
+                path_to_convert = os.path.normpath(path_to_save +"\\"+name+"_converted")
+                os.mkdir(path_to_convert)
+                i = 0
+                while i < len(list(msp.query("LWPOLYLINE"))):
+                    with open(path_to_convert + "\\" + name + "_" + str(i) + ".csv", "w") as conv:
+                        for point in list(msp.query('LWPOLYLINE')[i]):
+                            x = round(point[0], 2)
+                            y = round(point[1], 2)
+                            conv.write(str(x) + ";" + str(y) + "\n")
+                    i += 1
+            elif len(list(msp.query("LWPOLYLINE"))) == 1:
+                with open(path_to_save + "_converted.csv", "w") as conv:
+                    for point in list(msp.query('LWPOLYLINE')[0]):
+                        x = round(point[0], 2)
+                        y = round(point[1], 2)
+                        conv.write(str(x) + ";" + str(y) + "\n")
+            elif len(list(msp.query("LWPOLYLINE"))) == 0:
+                msgBox = QtGui.QMessageBox()
+                msgBox.question(msgBox, "Внимание!", "На чертеже отсутствуют полилинии!", msgBox.Ok)
         self.settings["lastdirectory"] = path_to_file
         with open('settings.json', 'w', encoding='utf-8') as file:
             file.write(json.dumps(self.settings, ensure_ascii=False))
