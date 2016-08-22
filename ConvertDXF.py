@@ -51,7 +51,7 @@ class Window(QtGui.QMainWindow):
         # Элементы
 
         # Метки
-        dialog_label = QtGui.QLabel("Выбор директории")
+        dialog_label = QtGui.QLabel("Выбор конвертируемого файла")
         list_of_files = QtGui.QLabel("Выбор места сохранения")
         name_label = QtGui.QLabel("Имя сохраняемого файла")
 
@@ -168,7 +168,7 @@ class Window(QtGui.QMainWindow):
                 path_to_convert = os.path.normpath(path_to_save +"\\"+name+"_converted")
                 os.mkdir(path_to_convert)
                 i = 0
-                while i < len(list(msp.query("LWPOLYLINE"))):
+                while i < len(polyline):
                     with open(path_to_convert + "\\" + name + "_" + str(i) + ".csv", "w") as conv:
                         for point in list(msp.query('LWPOLYLINE')[i]):
                             x = round(point[0], 2)
@@ -176,7 +176,7 @@ class Window(QtGui.QMainWindow):
                             conv.write(str(x) + ";" + str(y) + "\n")
                     i += 1
             elif len(polyline) == 1:
-                with open(path_to_save + "_converted.csv", "w") as conv:
+                with open(path_to_save +"\\"+ name + "_converted.csv", "w") as conv:
                     for point in list(msp.query('LWPOLYLINE')[0]):
                         x = round(point[0], 2)
                         y = round(point[1], 2)
