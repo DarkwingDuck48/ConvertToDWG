@@ -10,7 +10,7 @@ import subprocess
 
 from PyQt4 import QtGui, QtCore
 from ezdxf.lldxf.const import DXFStructureError
-
+from ManualConvert import Manual
 
 class Window(QtGui.QMainWindow):
 
@@ -124,7 +124,6 @@ class Window(QtGui.QMainWindow):
         self.connect(button_clear, QtCore.SIGNAL('clicked()'), self.cleartext)
         self.connect(button_exit, QtCore.SIGNAL('clicked()'), QtCore.SLOT('close()'))
         self.connect(button_ok, QtCore.SIGNAL('clicked()'), self.convert)
-
         self.connect(menu_open, QtCore.SIGNAL('triggered()'), self.openfiledialog)
         self.connect(menu_exit, QtCore.SIGNAL('triggered()'), QtCore.SLOT('close()'))
     # Функции
