@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="13" mnemonic="1" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="37" mnemonic="2" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="53" mnemonic="3" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="117" mnemonic="4" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="108" mnemonic="C" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="62" mnemonic="B" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="39" mnemonic="L" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="31" mnemonic="P" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="75" mnemonic="V" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="15" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="39" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="55" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="119" mnemonic="4" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="110" mnemonic="C" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="64" mnemonic="B" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="41" mnemonic="L" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="33" mnemonic="P" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="77" mnemonic="V" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d9614ec-05bf-4d57-a17a-5eeaae152f98" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testing.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConvertDXF.py" afterPath="$PROJECT_DIR$/ConvertDXF.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.json" afterPath="$PROJECT_DIR$/settings.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/еуые2.py" afterPath="$PROJECT_DIR$/еуые2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="ConvertToDWG.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,17 +36,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConvertDXF.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConvertDXF.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConvertDXF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#211#4949#0" expanded="true" />
-                <element signature="e#5003#5990#0" expanded="true" />
-                <element signature="e#6025#6115#0" expanded="true" />
+                <element signature="e#213#4951#0" expanded="true" />
+                <element signature="e#5005#5992#0" expanded="true" />
+                <element signature="e#6027#6117#0" expanded="true" />
+                <element signature="e#6150#10034#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="68">
+                <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -89,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/еуые2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -123,6 +138,7 @@
         <option value="$PROJECT_DIR$/testing.py" />
         <option value="$PROJECT_DIR$/еуые2.py" />
         <option value="$PROJECT_DIR$/ConvertDXF.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -157,8 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,28 +191,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ConvertToDWG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ConvertToDWG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testFiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Rastres" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.ConvertDXF">
     <configuration default="false" name="ConvertDXF" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -477,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471864564785</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавлено открытие папки сохранения, после конвертации. &#10;Добавлена поддержка старых версий AutoCAD.">
+      <created>1472105973038</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1472105973038</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -503,18 +512,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31912443" sideWeight="0.50317967" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31912443" sideWeight="0.49682036" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31912443" sideWeight="0.49682036" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,7 +560,8 @@
     <MESSAGE value="Исправления" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;testing.py&#10;" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="Добавлено открытие папки сохранения, после конвертации. &#10;Добавлена поддержка старых версий AutoCAD." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено открытие папки сохранения, после конвертации. &#10;Добавлена поддержка старых версий AutoCAD." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -563,14 +573,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/XMLtoDWG.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -595,9 +597,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#211#4949#0" expanded="true" />
-            <element signature="e#5003#5990#0" expanded="true" />
-            <element signature="e#6025#6115#0" expanded="true" />
+            <element signature="e#213#4951#0" expanded="true" />
+            <element signature="e#5005#5992#0" expanded="true" />
+            <element signature="e#6027#6117#0" expanded="true" />
+            <element signature="e#6150#10034#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -642,9 +645,10 @@
           <caret line="9" column="44" selection-start-line="8" selection-start-column="3" selection-end-line="9" selection-end-column="44" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#211#4949#0" expanded="true" />
-            <element signature="e#5003#5990#0" expanded="true" />
-            <element signature="e#6025#6115#0" expanded="true" />
+            <element signature="e#213#4951#0" expanded="true" />
+            <element signature="e#5005#5992#0" expanded="true" />
+            <element signature="e#6027#6117#0" expanded="true" />
+            <element signature="e#6150#10034#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -682,9 +686,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#211#4949#0" expanded="true" />
-            <element signature="e#5003#5990#0" expanded="true" />
-            <element signature="e#6025#6115#0" expanded="true" />
+            <element signature="e#213#4951#0" expanded="true" />
+            <element signature="e#5005#5992#0" expanded="true" />
+            <element signature="e#6027#6117#0" expanded="true" />
+            <element signature="e#6150#10034#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -722,9 +727,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#211#4949#0" expanded="true" />
-            <element signature="e#5003#5990#0" expanded="true" />
-            <element signature="e#6025#6115#0" expanded="true" />
+            <element signature="e#213#4951#0" expanded="true" />
+            <element signature="e#5005#5992#0" expanded="true" />
+            <element signature="e#6027#6117#0" expanded="true" />
+            <element signature="e#6150#10034#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -753,9 +759,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#211#4949#0" expanded="true" />
-            <element signature="e#5003#5990#0" expanded="true" />
-            <element signature="e#6025#6115#0" expanded="true" />
+            <element signature="e#213#4951#0" expanded="true" />
+            <element signature="e#5005#5992#0" expanded="true" />
+            <element signature="e#6027#6117#0" expanded="true" />
+            <element signature="e#6150#10034#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -784,9 +791,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#211#4949#0" expanded="true" />
-            <element signature="e#5003#5990#0" expanded="true" />
-            <element signature="e#6025#6115#0" expanded="true" />
+            <element signature="e#213#4951#0" expanded="true" />
+            <element signature="e#5005#5992#0" expanded="true" />
+            <element signature="e#6027#6117#0" expanded="true" />
+            <element signature="e#6150#10034#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -815,9 +823,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#211#4949#0" expanded="true" />
-            <element signature="e#5003#5990#0" expanded="true" />
-            <element signature="e#6025#6115#0" expanded="true" />
+            <element signature="e#213#4951#0" expanded="true" />
+            <element signature="e#5005#5992#0" expanded="true" />
+            <element signature="e#6027#6117#0" expanded="true" />
+            <element signature="e#6150#10034#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -939,28 +948,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="101" column="75" selection-start-line="101" selection-start-column="75" selection-end-line="101" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/еуые2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ConvertDXF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#211#4949#0" expanded="true" />
-            <element signature="e#5003#5990#0" expanded="true" />
-            <element signature="e#6025#6115#0" expanded="true" />
+            <element signature="e#213#4951#0" expanded="true" />
+            <element signature="e#5005#5992#0" expanded="true" />
+            <element signature="e#6027#6117#0" expanded="true" />
+            <element signature="e#6150#10034#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="68">
+            <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

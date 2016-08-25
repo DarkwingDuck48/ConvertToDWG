@@ -6,7 +6,9 @@ import subprocess
 from PyQt4 import QtGui, QtCore
 from ezdxf.lldxf.const import DXFStructureError
 
+
 class Window(QtGui.QMainWindow):
+
     def __init__(self, parent=None):
         super(Window, self).__init__(parent)
         with open('settings.json', "r", encoding='utf-8') as file:
