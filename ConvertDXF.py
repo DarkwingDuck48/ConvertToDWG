@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import subprocess
 
 from PyQt4 import QtGui, QtCore
 from ezdxf.lldxf.const import DXFStructureError
@@ -11,7 +12,7 @@ class Window(QtGui.QMainWindow):
         with open('settings.json', "r", encoding='utf-8') as file:
             self.settings = json.load(file)
         # Настройка главного окна
-        self.setGeometry(400, 300, 280, 250)
+        self.setGeometry(400, 300, 280, 400)
         self.setWindowIcon(QtGui.QIcon("icons/gconfeditor.png"))
         self.centralWidget = QtGui.QWidget()
         self.setCentralWidget(self.centralWidget)
@@ -43,6 +44,8 @@ class Window(QtGui.QMainWindow):
         layout_save = QtGui.QHBoxLayout()
         layout_clear = QtGui.QHBoxLayout()
         layout_save_name = QtGui.QHBoxLayout()
+        layout_settings_dxf = QtGui.QHBoxLayout()
+        layout_label = QtGui.QHBoxLayout()
         bottom = QtGui.QHBoxLayout()
         bottom.addStretch(5)
         layout_grid.addLayout(vbox, 100, 100, 3, 2, QtCore.Qt.AlignTop)
@@ -53,7 +56,9 @@ class Window(QtGui.QMainWindow):
         # Метки
         dialog_label = QtGui.QLabel("Выбор конвертируемого файла")
         list_of_files = QtGui.QLabel("Выбор места сохранения")
-        name_label = QtGui.QLabel("Имя сохраняемого файла")
+        self.name_label = QtGui.QLabel("Имя сохраняемого файла")
+        self.name_dxf = QtGui.QLabel("Версия AutoCAD")
+        self.name_type_line = QtGui.QLabel("Тип добавления")
 
         # Кнопки
         button_open_to_open = QtGui.QPushButton("Open", self.centralWidget)
@@ -75,6 +80,8 @@ class Window(QtGui.QMainWindow):
                          "AutoCAD 2013": "AC1027"}
         for key in self.versions.keys():
             self.dxf_version.addItem(key)
+        self.type_line = QtGui.QComboBox()
+        self.type_line.addItems(["Точки","Линии"])
 
         # Компановка
         vbox.addWidget(dialog_label)
@@ -85,11 +92,16 @@ class Window(QtGui.QMainWindow):
         layout_save.addWidget(self.path_to_save)
         layout_save.addWidget(button_open_to_save)
         layout_save_name.addWidget(self.name_file)
-        layout_save_name.addWidget(self.dxf_version)
+        layout_label.addWidget(self.name_dxf)
+        layout_label.addWidget(self.name_type_line)
         vbox.addLayout(layout_save)
-        vbox.addWidget(name_label)
+        vbox.addWidget(self.name_label)
+        layout_settings_dxf.addWidget(self.dxf_version)
+        layout_settings_dxf.addWidget(self.type_line)
         vbox.addLayout(layout_clear)
         vbox.addLayout(layout_save_name)
+        vbox.addLayout(layout_label)
+        vbox.addLayout(layout_settings_dxf)
         bottom.addWidget(button_clear, 200, QtCore.Qt.AlignLeft)
         bottom.addWidget(button_ok)
         bottom.addWidget(button_exit)
@@ -115,6 +127,7 @@ class Window(QtGui.QMainWindow):
             self.path_to_file.setText(filename)
             if filename[-4:] == ".dxf":
                 self.dxf_version.setDisabled(True)
+                self.type_line.setDisabled(True)
         if self.sender().text() == "Save":
             if self.path_to_file.text() == "":
                 link = os.path.normpath(self.settings['lastdirectory'])
@@ -130,9 +143,14 @@ class Window(QtGui.QMainWindow):
 
     def convert(self):
         import ezdxf
+        # Получение необходимых данных из формы
+
         path_to_file = os.path.normpath(self.path_to_file.text())
         path_to_save = os.path.normpath(self.path_to_save.text())
         name = self.name_file.text()
+        import_type = self.type_line.itemText(self.type_line.currentIndex())
+
+        # Обработка, если исходный файл с расширением .csv
         if str(path_to_file)[-4:] == ".csv":
             save_to = os.path.normpath(path_to_save + '\\' + name + ".dxf")
             key = self.dxf_version.itemText(self.dxf_version.currentIndex())
@@ -149,16 +167,35 @@ class Window(QtGui.QMainWindow):
             dxf = ezdxf.new(dxfversion=self.versions[key])
             msp = dxf.modelspace()
             points = tuple([coord for coord in coords])
-            msp.add_lwpolyline(points)
-            dxf.saveas(save_to)
+            # Вывод в старые версии Autocad (R12)
+            if self.versions[key] == "AC1009":
+                from ezdxf.r12writer import r12writer
+                with r12writer(str(save_to)) as dxf:
+                    if import_type == "Линии":
+                        dxf.add_polyline(points)
+                    else:
+                        for point in points:
+                            dxf.add_point(point)
+
+            # Вывод в новые версии Autocad
+            else:
+                if import_type == "Линии":
+                    msp.add_lwpolyline(points)
+                else:
+                    for point in points:
+                        msp.add_point(point)
+                dxf.saveas(save_to)
+            subprocess.Popen('explorer %s' % path_to_save)
+
+        # Обработка, если исходный файл с расширением .dxf
         if str(path_to_file)[-4:] == ".dxf":
             try:
                 dxf = ezdxf.readfile(path_to_file)
             except DXFStructureError:
                 error = QtGui.QErrorMessage()
                 error.showMessage("Произошла ошибка при открытии файла %s" % path_to_file)
-            msp = dxf.modelspace()
 
+            msp = dxf.modelspace()
             if dxf.dxfversion == "AC1009":
                 polyline = list(msp.querry("POLYLINE"))
             else:
@@ -170,20 +207,23 @@ class Window(QtGui.QMainWindow):
                 i = 0
                 while i < len(polyline):
                     with open(path_to_convert + "\\" + name + "_" + str(i) + ".csv", "w") as conv:
-                        for point in list(msp.query('LWPOLYLINE')[i]):
+                        for point in polyline[i]:
                             x = round(point[0], 2)
                             y = round(point[1], 2)
                             conv.write(str(x) + ";" + str(y) + "\n")
                     i += 1
+                subprocess.Popen('explorer %s' % path_to_convert)
             elif len(polyline) == 1:
                 with open(path_to_save +"\\"+ name + "_converted.csv", "w") as conv:
-                    for point in list(msp.query('LWPOLYLINE')[0]):
+                    for point in polyline[0]:
                         x = round(point[0], 2)
                         y = round(point[1], 2)
                         conv.write(str(x) + ";" + str(y) + "\n")
+                subprocess.Popen('explorer %s' % path_to_save)
             elif len(polyline) == 0:
                 msgBox = QtGui.QMessageBox()
                 msgBox.question(msgBox, "Внимание!", "На чертеже отсутствуют полилинии!", msgBox.Ok)
+
         self.settings["lastdirectory"] = path_to_file
         with open('settings.json', 'w', encoding='utf-8') as file:
             file.write(json.dumps(self.settings, ensure_ascii=False))

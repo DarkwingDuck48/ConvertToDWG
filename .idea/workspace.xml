@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="12" mnemonic="1" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="36" mnemonic="2" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="50" mnemonic="3" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="105" mnemonic="4" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="96" mnemonic="C" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="57" mnemonic="B" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="38" mnemonic="L" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="30" mnemonic="P" />
-    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="70" mnemonic="V" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="13" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="37" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="53" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="117" mnemonic="4" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="108" mnemonic="C" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="62" mnemonic="B" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="39" mnemonic="L" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="31" mnemonic="P" />
+    <bookmark url="file://$PROJECT_DIR$/ConvertDXF.py" line="75" mnemonic="V" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d9614ec-05bf-4d57-a17a-5eeaae152f98" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/testing.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConvertDXF.py" afterPath="$PROJECT_DIR$/ConvertDXF.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.json" afterPath="$PROJECT_DIR$/settings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/еуые2.py" afterPath="$PROJECT_DIR$/еуые2.py" />
     </list>
     <ignored path="ConvertToDWG.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,13 +41,13 @@
       <file leaf-file-name="ConvertDXF.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ConvertDXF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="154" column="16" selection-start-line="154" selection-start-column="16" selection-end-line="154" selection-end-column="16" />
+            <state relative-caret-position="34">
+              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#193#4371#0" expanded="true" />
-                <element signature="e#4425#5363#0" expanded="true" />
-                <element signature="e#5398#5488#0" expanded="true" />
+                <element signature="e#211#4949#0" expanded="true" />
+                <element signature="e#5003#5990#0" expanded="true" />
+                <element signature="e#6025#6115#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +88,8 @@
       <file leaf-file-name="еуые2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/еуые2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+            <state relative-caret-position="34">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -153,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -188,7 +193,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,7 +200,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Rastres" />
   </component>
-  <component name="RunManager" selected="Python.еуые2">
+  <component name="RunManager" selected="Python.ConvertDXF">
     <configuration default="false" name="ConvertDXF" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -430,9 +434,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.еуые2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.testing" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ConvertDXF" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ConvertDXF" />
+        <item index="1" class="java.lang.String" itemvalue="Python.еуые2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.testing" />
         <item index="3" class="java.lang.String" itemvalue="Python.CSVtoDWG" />
         <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in ConvertToDWG" />
       </list>
@@ -466,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1471862510819</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="changes">
+      <created>1471864564785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1471864564785</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -485,14 +496,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17408586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17408586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31912443" sideWeight="0.50317967" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31912443" sideWeight="0.49682036" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31912443" sideWeight="0.49682036" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -539,24 +550,54 @@
     <MESSAGE value="Добавлена поддержка перевода DXF файлов в CSV (test)" />
     <MESSAGE value="Исправления" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;testing.py&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;testing.py&#10;" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XMLtoDWG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+          <folding>
+            <element signature="e#223#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/еуые2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ConvertDXF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="44" selection-start-line="8" selection-start-column="3" selection-end-line="9" selection-end-column="44" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#193#4371#0" expanded="true" />
-            <element signature="e#4425#5363#0" expanded="true" />
-            <element signature="e#5398#5488#0" expanded="true" />
+            <element signature="e#211#4949#0" expanded="true" />
+            <element signature="e#5003#5990#0" expanded="true" />
+            <element signature="e#6025#6115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -569,14 +610,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing.py">
+    <entry file="file://$PROJECT_DIR$/settings.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/XMLtoDWG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+          <folding>
+            <element signature="e#223#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/еуые2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConvertDXF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="44" selection-start-line="8" selection-start-column="3" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#211#4949#0" expanded="true" />
+            <element signature="e#5003#5990#0" expanded="true" />
+            <element signature="e#6025#6115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSVtoDWG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing.py" />
     <entry file="file://$PROJECT_DIR$/settings.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -601,9 +682,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#193#4371#0" expanded="true" />
-            <element signature="e#4425#5363#0" expanded="true" />
-            <element signature="e#5398#5488#0" expanded="true" />
+            <element signature="e#211#4949#0" expanded="true" />
+            <element signature="e#5003#5990#0" expanded="true" />
+            <element signature="e#6025#6115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -616,14 +697,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/testing.py" />
     <entry file="file://$PROJECT_DIR$/settings.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -648,9 +722,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#193#4371#0" expanded="true" />
-            <element signature="e#4425#5363#0" expanded="true" />
-            <element signature="e#5398#5488#0" expanded="true" />
+            <element signature="e#211#4949#0" expanded="true" />
+            <element signature="e#5003#5990#0" expanded="true" />
+            <element signature="e#6025#6115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -679,9 +753,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#193#4371#0" expanded="true" />
-            <element signature="e#4425#5363#0" expanded="true" />
-            <element signature="e#5398#5488#0" expanded="true" />
+            <element signature="e#211#4949#0" expanded="true" />
+            <element signature="e#5003#5990#0" expanded="true" />
+            <element signature="e#6025#6115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -710,9 +784,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#193#4371#0" expanded="true" />
-            <element signature="e#4425#5363#0" expanded="true" />
-            <element signature="e#5398#5488#0" expanded="true" />
+            <element signature="e#211#4949#0" expanded="true" />
+            <element signature="e#5003#5990#0" expanded="true" />
+            <element signature="e#6025#6115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -741,9 +815,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#193#4371#0" expanded="true" />
-            <element signature="e#4425#5363#0" expanded="true" />
-            <element signature="e#5398#5488#0" expanded="true" />
+            <element signature="e#211#4949#0" expanded="true" />
+            <element signature="e#5003#5990#0" expanded="true" />
+            <element signature="e#6025#6115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -830,18 +904,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/someElseXML.py" />
     <entry file="file://$PROJECT_DIR$/adsf.py" />
-    <entry file="file://$PROJECT_DIR$/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testFiles_Converted/0.csv" />
-    <entry file="file://$PROJECT_DIR$/testFiles_converted.csv" />
     <entry file="file://$PROJECT_DIR$/Test2_converted/Test2_0.csv" />
     <entry file="file://$PROJECT_DIR$/Test2_converted/Test2_1.csv" />
+    <entry file="file://$PROJECT_DIR$/testing.py" />
     <entry file="file://$PROJECT_DIR$/XMLtoDWG.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -849,22 +915,6 @@
           <folding>
             <element signature="e#223#257#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/еуые2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,15 +926,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testFiles_converted.csv" />
+    <entry file="file://$PROJECT_DIR$/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/site-packages/ezdxf/r12writer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="101" column="75" selection-start-line="101" selection-start-column="75" selection-end-line="101" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/еуые2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ConvertDXF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="154" column="16" selection-start-line="154" selection-start-column="16" selection-end-line="154" selection-end-column="16" />
+        <state relative-caret-position="34">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#193#4371#0" expanded="true" />
-            <element signature="e#4425#5363#0" expanded="true" />
-            <element signature="e#5398#5488#0" expanded="true" />
+            <element signature="e#211#4949#0" expanded="true" />
+            <element signature="e#5003#5990#0" expanded="true" />
+            <element signature="e#6025#6115#0" expanded="true" />
           </folding>
         </state>
       </provider>
