@@ -1,3 +1,8 @@
+"""
+Maxim Britvin, 2016
+email: maksbritvin@gmail.com
+"""
+
 import json
 import os
 import sys
@@ -21,19 +26,25 @@ class Window(QtGui.QMainWindow):
         # Верхняя панель меню
 
         # Опции вкладок
-        icon_open = QtGui.QIcon("icons/eye.png")
-        menu_open = QtGui.QAction(icon_open, "Open", self)
+        icon_open = QtGui.QIcon("icons/note.png")
+        menu_open = QtGui.QAction(icon_open, "Открыть файл", self)
         menu_open.setShortcut("Ctrl-O")
-        menu_open.setStatusTip("Open file")
+        menu_open.setStatusTip("Конвертация из файла")
 
         icon_exit = QtGui.QIcon("icons/power.png")
-        menu_exit = QtGui.QAction(icon_exit, "Exit", self)
+        menu_exit = QtGui.QAction(icon_exit, "Выход", self)
         menu_exit.setShortcut("Ctrl-Q")
-        menu_open.setStatusTip("Exit application")
+        menu_open.setStatusTip("Выход")
+
+        icon_manual = QtGui.QIcon("icons/pen.png")
+        menu_manual = QtGui.QAction(icon_manual,"Создать новый",self)
+        menu_manual.setShortcut("Ctrl-N")
+        menu_manual.setStatusTip("Создание нового файла")
 
         # Сама панель
         menubar = self.menuBar()
-        file = menubar.addMenu('&File')
+        file = menubar.addMenu('&Файл')
+        file.addAction(menu_manual)
         file.addAction(menu_open)
         file.addSeparator()
         file.addAction(menu_exit)
@@ -76,10 +87,8 @@ class Window(QtGui.QMainWindow):
 
         # Версии получаемого DXF файла
         self.dxf_version = QtGui.QComboBox()
-        self.versions = {"AutoCAD R12": "AC1009", "AutoCAD R13": "AC1012", "AutoCAD R14": "AC1014",
-                         "AutoCAD 2000": "AC1015",
-                         "AutoCAD 2004": "AC1018", "AutoCAD 2007": "AC1021", "AutoCAD 2010": "AC1024",
-                         "AutoCAD 2013": "AC1027"}
+        self.versions = {"AutoCAD R12": "AC1009", "AutoCAD 2000": "AC1015", "AutoCAD 2004": "AC1018",
+                         "AutoCAD 2007": "AC1021", "AutoCAD 2010": "AC1024", "AutoCAD 2013": "AC1027"}
         for key in self.versions.keys():
             self.dxf_version.addItem(key)
         self.type_line = QtGui.QComboBox()
@@ -109,21 +118,22 @@ class Window(QtGui.QMainWindow):
         bottom.addWidget(button_exit)
 
         # Соединение функций со кнопками и меню
+
         self.connect(button_open_to_open, QtCore.SIGNAL('clicked()'), self.openfiledialog)
         self.connect(button_open_to_save, QtCore.SIGNAL('clicked()'), self.openfiledialog)
         self.connect(button_clear, QtCore.SIGNAL('clicked()'), self.cleartext)
-        self.connect(menu_open, QtCore.SIGNAL('triggered()'), self.openfiledialog)
-        self.connect(menu_exit, QtCore.SIGNAL('triggered()'), QtCore.SLOT('close()'))
         self.connect(button_exit, QtCore.SIGNAL('clicked()'), QtCore.SLOT('close()'))
         self.connect(button_ok, QtCore.SIGNAL('clicked()'), self.convert)
 
+        self.connect(menu_open, QtCore.SIGNAL('triggered()'), self.openfiledialog)
+        self.connect(menu_exit, QtCore.SIGNAL('triggered()'), QtCore.SLOT('close()'))
     # Функции
     def openfiledialog(self):
         if self.settings['lastdirectory'] == '':
             link = '/home'
         else:
             link = os.path.normpath(self.settings['lastdirectory'])
-        if self.sender().text() == "Open":
+        if self.sender().text() == "Открыть файл" or self.sender().text() == "Open":
             filename = QtGui.QFileDialog.getOpenFileName(self.centralWidget, "Open file", link,
                                                          "Файлы CSV (*.csv);;Файлы обмена чертежей AutoCAD(*.dxf)")
             self.path_to_file.setText(filename)
@@ -193,11 +203,11 @@ class Window(QtGui.QMainWindow):
         if str(path_to_file)[-4:] == ".dxf":
             try:
                 dxf = ezdxf.readfile(path_to_file)
+                msp = dxf.modelspace()
             except DXFStructureError:
                 error = QtGui.QErrorMessage()
                 error.showMessage("Произошла ошибка при открытии файла %s" % path_to_file)
 
-            msp = dxf.modelspace()
             if dxf.dxfversion == "AC1009":
                 polyline = list(msp.querry("POLYLINE"))
             else:
@@ -229,7 +239,6 @@ class Window(QtGui.QMainWindow):
         self.settings["lastdirectory"] = path_to_file
         with open('settings.json', 'w', encoding='utf-8') as file:
             file.write(json.dumps(self.settings, ensure_ascii=False))
-
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
