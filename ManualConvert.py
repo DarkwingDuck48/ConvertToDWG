@@ -14,9 +14,62 @@ class Manual(QtGui.QMainWindow):
         super(Manual, self).__init__(parent)
 
         # Настройка главного окна
-        self.setGeometry(400, 300, 280, 400)
+        self.setGeometry(400, 300, 361, 454)
         self.centralWidget = QtGui.QWidget()
         self.setCentralWidget(self.centralWidget)
+
+        layout_grid = QtGui.QGridLayout()
+        layout_vbox = QtGui.QVBoxLayout()
+        layout_text_edit = QtGui.QHBoxLayout()
+        layout_radio = QtGui.QHBoxLayout()
+        layout_buttons = QtGui.QHBoxLayout()
+        layout_grid.addLayout(layout_vbox, 0, 0)
+        self.centralWidget.setLayout(layout_grid)
+
+        self.table = QtGui.QTableWidget()
+        self.table.setColumnCount(2)
+        self.table.setHorizontalHeaderItem(0, QtGui.QTableWidgetItem("Координата X"))
+        self.table.setHorizontalHeaderItem(1, QtGui.QTableWidgetItem("Координата Y"))
+        self.table.setColumnWidth(0, 150)
+        self.table.setColumnWidth(1, 150)
+#        self.table.insertRow(0)
+#        self.table.setItem(0, 0, QtGui.QTableWidgetItem("123"))
+
+        self.x = QtGui.QLineEdit()
+        self.y = QtGui.QLineEdit()
+
+        button_add = QtGui.QPushButton("Добавить", self.centralWidget)
+        button_ok = QtGui.QPushButton("Ok",self.centralWidget)
+        button_exit = QtGui.QPushButton("Выход", self.centralWidget)
+        button_clear = QtGui.QPushButton("Очистить", self.centralWidget)
+
+        dxf_radio = QtGui.QRadioButton("DXF", self.centralWidget)
+        csv_radio = QtGui.QRadioButton("CSV", self.centralWidget)
+
+        layout_text_edit.addWidget(self.x)
+        layout_text_edit.addWidget(self.y)
+        layout_text_edit.addWidget(button_add)
+        layout_vbox.addLayout(layout_text_edit, QtCore.Qt.AlignTop)
+        layout_radio.addWidget(dxf_radio)
+        layout_radio.addWidget(csv_radio)
+        layout_vbox.addLayout(layout_radio)
+        layout_vbox.addWidget(self.table)
+        layout_buttons.addWidget(button_clear)
+        layout_buttons.addWidget(button_ok)
+        layout_buttons.addWidget(button_exit)
+        layout_vbox.addLayout(layout_buttons,QtCore.Qt.AlignBottom)
+
+        self.connect(button_add,QtCore.SIGNAL('clicked()'), self.add_coord)
+
+    def add_coord(self):
+        count = self.table.rowCount()
+        if count is None:
+            count = 0
+        else:
+            count += 0
+        self.table.insertRow(count)
+        self.table.setItem(count, 0, QtGui.QTableWidgetItem(str(self.x.text())))
+        self.table.setItem(count, 1, QtGui.QTableWidgetItem(str(self.y.text())))
 
 
 if __name__ == "__main__":

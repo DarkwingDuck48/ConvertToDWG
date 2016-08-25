@@ -21,15 +21,15 @@ class Core(QtGui.QMainWindow):
         self.file_win = None
         self.manual_win = None
         layout_grid = QtGui.QGridLayout()
-        vbox = QtGui.QVBoxLayout()
+        button_vbox = QtGui.QVBoxLayout()
         self.centralWidget.setLayout(layout_grid)
 
         button_file = QtGui.QPushButton("Чтение данных из файла",self.centralWidget)
         button_manual = QtGui.QPushButton("Введение данных вручную", self.centralWidget)
 
-        vbox.addWidget(button_file)
-        vbox.addWidget(button_manual)
-        layout_grid.addLayout(vbox,0,1)
+        button_vbox.addWidget(button_file)
+        button_vbox.addWidget(button_manual)
+        layout_grid.addLayout(button_vbox,0,1)
 
         self.connect(button_file, QtCore.SIGNAL('clicked()'), self.fromFile)
         self.connect(button_manual, QtCore.SIGNAL('clicked()'),self.manual)
