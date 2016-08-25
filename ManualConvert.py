@@ -1,6 +1,9 @@
 """
 Maxim Britvin, 2016
 email: maksbritvin@gmail.com
+
+TODO:
+В момент нажатия кнопки OK - открывается окно выбора места сохранения файла.
 """
 
 import os
@@ -32,8 +35,6 @@ class Manual(QtGui.QMainWindow):
         self.table.setHorizontalHeaderItem(1, QtGui.QTableWidgetItem("Координата Y"))
         self.table.setColumnWidth(0, 150)
         self.table.setColumnWidth(1, 150)
-#        self.table.insertRow(0)
-#        self.table.setItem(0, 0, QtGui.QTableWidgetItem("123"))
 
         self.x = QtGui.QLineEdit()
         self.y = QtGui.QLineEdit()
@@ -43,15 +44,15 @@ class Manual(QtGui.QMainWindow):
         button_exit = QtGui.QPushButton("Выход", self.centralWidget)
         button_clear = QtGui.QPushButton("Очистить", self.centralWidget)
 
-        dxf_radio = QtGui.QRadioButton("DXF", self.centralWidget)
-        csv_radio = QtGui.QRadioButton("CSV", self.centralWidget)
+        self.dxf_radio = QtGui.QRadioButton("DXF", self.centralWidget)
+        self.csv_radio = QtGui.QRadioButton("CSV", self.centralWidget)
 
         layout_text_edit.addWidget(self.x)
         layout_text_edit.addWidget(self.y)
         layout_text_edit.addWidget(button_add)
         layout_vbox.addLayout(layout_text_edit, QtCore.Qt.AlignTop)
-        layout_radio.addWidget(dxf_radio)
-        layout_radio.addWidget(csv_radio)
+        layout_radio.addWidget(self.dxf_radio)
+        layout_radio.addWidget(self.csv_radio)
         layout_vbox.addLayout(layout_radio)
         layout_vbox.addWidget(self.table)
         layout_buttons.addWidget(button_clear)
@@ -60,7 +61,7 @@ class Manual(QtGui.QMainWindow):
         layout_vbox.addLayout(layout_buttons,QtCore.Qt.AlignBottom)
 
         self.connect(button_add,QtCore.SIGNAL('clicked()'), self.add_coord)
-
+        self.connect(button_ok,QtCore.SIGNAL('clicked()'),self.convert)
     def add_coord(self):
         count = self.table.rowCount()
         if count is None:
@@ -70,8 +71,17 @@ class Manual(QtGui.QMainWindow):
         self.table.insertRow(count)
         self.table.setItem(count, 0, QtGui.QTableWidgetItem(str(self.x.text())))
         self.table.setItem(count, 1, QtGui.QTableWidgetItem(str(self.y.text())))
+        self.x.clear()
+        self.y.clear()
 
-
+    def convert(self):
+        points = []
+        for i in range(0,self.table.rowCount()):
+            point_x = self.table.item(i,0).text()
+            point_y = self.table.item(i,1).text()
+            point = tuple([float(point_x), float(point_y)])
+            points.append(point)
+        print(points)
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     window = Manual()
