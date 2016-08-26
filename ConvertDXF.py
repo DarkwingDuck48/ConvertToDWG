@@ -1,6 +1,9 @@
 """
 Maxim Britvin, 2016
 email: maksbritvin@gmail.com
+
+TODO :
+Добавить поддержку txt
 """
 
 import json
@@ -23,32 +26,6 @@ class Window(QtGui.QMainWindow):
         self.setWindowIcon(QtGui.QIcon("icons/gconfeditor.png"))
         self.centralWidget = QtGui.QWidget()
         self.setCentralWidget(self.centralWidget)
-        # Верхняя панель меню
-
-        # Опции вкладок
-        icon_open = QtGui.QIcon("icons/note.png")
-        menu_open = QtGui.QAction(icon_open, "Открыть файл", self)
-        menu_open.setShortcut("Ctrl-O")
-        menu_open.setStatusTip("Конвертация из файла")
-
-        icon_exit = QtGui.QIcon("icons/power.png")
-        menu_exit = QtGui.QAction(icon_exit, "Выход", self)
-        menu_exit.setShortcut("Ctrl-Q")
-        menu_open.setStatusTip("Выход")
-
-        icon_manual = QtGui.QIcon("icons/pen.png")
-        menu_manual = QtGui.QAction(icon_manual,"Создать новый",self)
-        menu_manual.setShortcut("Ctrl-N")
-        menu_manual.setStatusTip("Создание нового файла")
-
-        # Сама панель
-        menubar = self.menuBar()
-        file = menubar.addMenu('&Файл')
-        file.addAction(menu_manual)
-        file.addAction(menu_open)
-        file.addSeparator()
-        file.addAction(menu_exit)
-        # Расположение элементов
 
         # Слои
         layout_grid = QtGui.QGridLayout()
@@ -71,14 +48,16 @@ class Window(QtGui.QMainWindow):
         list_of_files = QtGui.QLabel("Выбор места сохранения")
         self.name_label = QtGui.QLabel("Имя сохраняемого файла")
         self.name_dxf = QtGui.QLabel("Версия AutoCAD")
+        self.name_dxf.setVisible(False)
         self.name_type_line = QtGui.QLabel("Тип добавления")
+        self.name_type_line.setVisible(False)
 
         # Кнопки
         button_open_to_open = QtGui.QPushButton("Open", self.centralWidget)
         button_open_to_save = QtGui.QPushButton("Save", self.centralWidget)
         button_ok = QtGui.QPushButton("Ok", self.centralWidget)
-        button_exit = QtGui.QPushButton("Exit", self.centralWidget)
-        button_clear = QtGui.QPushButton("Clear", self.centralWidget)
+        button_exit = QtGui.QPushButton("Назад", self.centralWidget)
+        button_clear = QtGui.QPushButton("Очистить", self.centralWidget)
 
         # Текстовые линии
         self.path_to_file = QtGui.QLineEdit()
@@ -92,7 +71,10 @@ class Window(QtGui.QMainWindow):
         for key in self.versions.keys():
             self.dxf_version.addItem(key)
         self.type_line = QtGui.QComboBox()
-        self.type_line.addItems(["Точки","Линии"])
+        self.type_line.addItems(["Точки", "Линии"])
+
+        self.dxf_version.setVisible(False)
+        self.type_line.setVisible(False)
 
         # Компановка
         vbox.addWidget(dialog_label)
@@ -124,8 +106,7 @@ class Window(QtGui.QMainWindow):
         self.connect(button_clear, QtCore.SIGNAL('clicked()'), self.cleartext)
         self.connect(button_exit, QtCore.SIGNAL('clicked()'), QtCore.SLOT('close()'))
         self.connect(button_ok, QtCore.SIGNAL('clicked()'), self.convert)
-        self.connect(menu_open, QtCore.SIGNAL('triggered()'), self.openfiledialog)
-        self.connect(menu_exit, QtCore.SIGNAL('triggered()'), QtCore.SLOT('close()'))
+
     # Функции
     def openfiledialog(self):
         if self.settings['lastdirectory'] == '':
@@ -134,11 +115,19 @@ class Window(QtGui.QMainWindow):
             link = os.path.normpath(self.settings['lastdirectory'])
         if self.sender().text() == "Открыть файл" or self.sender().text() == "Open":
             filename = QtGui.QFileDialog.getOpenFileName(self.centralWidget, "Open file", link,
-                                                         "Файлы CSV (*.csv);;Файлы обмена чертежей AutoCAD(*.dxf)")
+                                                         "Файлы CSV (*.csv);;Файлы обмена чертежей AutoCAD(*.dxf);; "
+                                                         "Текстовые файлы (*txt)")
             self.path_to_file.setText(filename)
             if filename[-4:] == ".dxf":
-                self.dxf_version.setDisabled(True)
-                self.type_line.setDisabled(True)
+                self.dxf_version.setVisible(False)
+                self.type_line.setVisible(False)
+                self.name_dxf.setVisible(False)
+                self.name_type_line.setVisible(False)
+            if filename[-4:] == ".csv" or filename[-4:] == ".txt":
+                self.dxf_version.setVisible(True)
+                self.type_line.setVisible(True)
+                self.name_dxf.setVisible(True)
+                self.name_type_line.setVisible(True)
         if self.sender().text() == "Save":
             if self.path_to_file.text() == "":
                 link = os.path.normpath(self.settings['lastdirectory'])
@@ -162,7 +151,7 @@ class Window(QtGui.QMainWindow):
         import_type = self.type_line.itemText(self.type_line.currentIndex())
 
         # Обработка, если исходный файл с расширением .csv
-        if str(path_to_file)[-4:] == ".csv":
+        if str(path_to_file)[-4:] == ".csv" or str(path_to_file)[-4] == ".txt":
             save_to = os.path.normpath(path_to_save + '\\' + name + ".dxf")
             key = self.dxf_version.itemText(self.dxf_version.currentIndex())
             coords = []
@@ -175,8 +164,7 @@ class Window(QtGui.QMainWindow):
                         good_coord += char
                     coord = [float(coord) for coord in good_coord.strip().split(";")]
                     coords.append(coord)
-            dxf = ezdxf.new(dxfversion=self.versions[key])
-            msp = dxf.modelspace()
+
             points = tuple([coord for coord in coords])
             # Вывод в старые версии Autocad (R12)
             if self.versions[key] == "AC1009":
@@ -190,6 +178,8 @@ class Window(QtGui.QMainWindow):
 
             # Вывод в новые версии Autocad
             else:
+                dxf = ezdxf.new(dxfversion=self.versions[key])
+                msp = dxf.modelspace()
                 if import_type == "Линии":
                     msp.add_lwpolyline(points)
                 else:
@@ -235,7 +225,7 @@ class Window(QtGui.QMainWindow):
                 msgBox = QtGui.QMessageBox()
                 msgBox.question(msgBox, "Внимание!", "На чертеже отсутствуют полилинии!", msgBox.Ok)
 
-        self.settings["lastdirectory"] = path_to_file
+        self.settings["lastdirectory"] = path_to_save
         with open('settings.json', 'w', encoding='utf-8') as file:
             file.write(json.dumps(self.settings, ensure_ascii=False))
 
