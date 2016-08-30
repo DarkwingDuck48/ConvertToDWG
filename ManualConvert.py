@@ -6,7 +6,7 @@ TODO:
 В момент нажатия кнопки OK - открывается окно выбора места сохранения файла.
 """
 
-import os
+import os,re
 import sys
 import json
 import subprocess
@@ -86,7 +86,7 @@ class Manual(QtGui.QMainWindow):
         self.connect(button_ok,QtCore.SIGNAL('clicked()'),self.convert)
         self.connect(self.dxf_radio, QtCore.SIGNAL('clicked()'), self.settings_for_dxf)
         self.connect(self.csv_radio, QtCore.SIGNAL('clicked()'),self.settings_for_csv)
-
+        self.connect(button_exit, QtCore.SIGNAL('clicked()'), QtCore.SLOT("close()"))
     def add_coord(self):
         count = self.table.rowCount()
         if count is None:

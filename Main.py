@@ -4,7 +4,7 @@ email: maksbritvin@gmail.com
 """
 
 import sys
-
+import re
 from PyQt4 import QtGui, QtCore
 from ConvertDXF import Window
 from ManualConvert import Manual
@@ -20,6 +20,7 @@ class Core(QtGui.QMainWindow):
         self.setCentralWidget(self.centralWidget)
         self.file_win = None
         self.manual_win = None
+        self.setWindowTitle("Простая программа")
         layout_grid = QtGui.QGridLayout()
         button_vbox = QtGui.QVBoxLayout()
         self.centralWidget.setLayout(layout_grid)
