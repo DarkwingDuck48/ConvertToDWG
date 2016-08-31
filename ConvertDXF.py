@@ -7,7 +7,7 @@ TODO :
 """
 
 import json
-import os,re
+import os, re
 import sys
 import subprocess
 
@@ -15,8 +15,8 @@ from PyQt4 import QtGui, QtCore
 from ezdxf.lldxf.const import DXFStructureError
 from ManualConvert import Manual
 
-class Window(QtGui.QMainWindow):
 
+class Window(QtGui.QMainWindow):
     def __init__(self, parent=None):
         super(Window, self).__init__(parent)
         with open('settings.json', "r", encoding='utf-8') as file:
@@ -32,10 +32,10 @@ class Window(QtGui.QMainWindow):
         vbox = QtGui.QVBoxLayout()
         layout_file = QtGui.QHBoxLayout()
         layout_save = QtGui.QHBoxLayout()
-        layout_clear = QtGui.QHBoxLayout()
         layout_save_name = QtGui.QHBoxLayout()
         layout_settings_dxf = QtGui.QHBoxLayout()
         layout_label = QtGui.QHBoxLayout()
+        layout_radiobutton = QtGui.QHBoxLayout()
         bottom = QtGui.QHBoxLayout()
         bottom.addStretch(5)
         layout_grid.addLayout(vbox, 100, 100, 3, 2, QtCore.Qt.AlignTop)
@@ -51,6 +51,8 @@ class Window(QtGui.QMainWindow):
         self.name_dxf.setVisible(False)
         self.name_type_line = QtGui.QLabel("Тип добавления")
         self.name_type_line.setVisible(False)
+        self.name_separator = QtGui.QLabel("Знак-разделитель координат")
+        self.name_separator.setVisible(False)
 
         # Кнопки
         button_open_to_open = QtGui.QPushButton("Open", self.centralWidget)
@@ -58,23 +60,34 @@ class Window(QtGui.QMainWindow):
         button_ok = QtGui.QPushButton("Ok", self.centralWidget)
         button_exit = QtGui.QPushButton("Назад", self.centralWidget)
         button_clear = QtGui.QPushButton("Очистить", self.centralWidget)
+        self.XtoY = QtGui.QRadioButton("X->Y",self.centralWidget)
+        self.XtoY.setVisible(False)
+        self.XtoY.setChecked(True)
+        self.YtoX = QtGui.QRadioButton("Y->X",self.centralWidget)
+        self.YtoX.setVisible(False)
 
         # Текстовые линии
         self.path_to_file = QtGui.QLineEdit()
         self.path_to_save = QtGui.QLineEdit()
         self.name_file = QtGui.QLineEdit()
 
-        # Версии получаемого DXF файла
+        # ComboBox
+        # Версии Cad
         self.dxf_version = QtGui.QComboBox()
         self.versions = {"AutoCAD R12": "AC1009", "AutoCAD 2000": "AC1015", "AutoCAD 2004": "AC1018",
                          "AutoCAD 2007": "AC1021", "AutoCAD 2010": "AC1024", "AutoCAD 2013": "AC1027"}
         for key in self.versions.keys():
             self.dxf_version.addItem(key)
+        self.dxf_version.setVisible(False)
+        # Тип добавления в CAD при загрузке CSV
         self.type_line = QtGui.QComboBox()
         self.type_line.addItems(["Точки", "Линии"])
-
-        self.dxf_version.setVisible(False)
         self.type_line.setVisible(False)
+
+        # Знак разделитель координат при загрузке CSV
+        self.separator = QtGui.QComboBox()
+        self.separator.addItems([',', ';'])
+        self.separator.setVisible(False)
 
         # Компановка
         vbox.addWidget(dialog_label)
@@ -91,10 +104,14 @@ class Window(QtGui.QMainWindow):
         vbox.addWidget(self.name_label)
         layout_settings_dxf.addWidget(self.dxf_version)
         layout_settings_dxf.addWidget(self.type_line)
-        vbox.addLayout(layout_clear)
         vbox.addLayout(layout_save_name)
+        vbox.addWidget(self.name_separator)
+        vbox.addWidget(self.separator)
+        layout_radiobutton.addWidget(self.XtoY)
+        layout_radiobutton.addWidget(self.YtoX)
         vbox.addLayout(layout_label)
         vbox.addLayout(layout_settings_dxf)
+        vbox.addLayout(layout_radiobutton)
         bottom.addWidget(button_clear, 200, QtCore.Qt.AlignLeft)
         bottom.addWidget(button_ok)
         bottom.addWidget(button_exit)
@@ -109,7 +126,7 @@ class Window(QtGui.QMainWindow):
 
     # Функции
     def openfiledialog(self):
-        if self.settings['lastdirectory'] == '':
+        if self.settings['lastdirectory'] == '' or os.path.exists(self.settings['lastdirectory']) is False:
             link = '/home'
         else:
             link = os.path.normpath(self.settings['lastdirectory'])
@@ -123,11 +140,19 @@ class Window(QtGui.QMainWindow):
                 self.type_line.setVisible(False)
                 self.name_dxf.setVisible(False)
                 self.name_type_line.setVisible(False)
+                self.name_separator.setVisible(False)
+                self.separator.setVisible(False)
+                self.XtoY.setVisible(True)
+                self.YtoX.setVisible(True)
             if filename[-4:] == ".csv" or filename[-4:] == ".txt":
                 self.dxf_version.setVisible(True)
                 self.type_line.setVisible(True)
                 self.name_dxf.setVisible(True)
                 self.name_type_line.setVisible(True)
+                self.name_separator.setVisible(True)
+                self.separator.setVisible(True)
+                self.XtoY.setVisible(True)
+                self.YtoX.setVisible(True)
         if self.sender().text() == "Save":
             if self.path_to_file.text() == "":
                 link = os.path.normpath(self.settings['lastdirectory'])
@@ -144,26 +169,45 @@ class Window(QtGui.QMainWindow):
     def convert(self):
         import ezdxf
         # Получение необходимых данных из формы
-
         path_to_file = os.path.normpath(self.path_to_file.text())
         path_to_save = os.path.normpath(self.path_to_save.text())
         name = self.name_file.text()
         import_type = self.type_line.itemText(self.type_line.currentIndex())
-
+        print(str(path_to_file))
         # Обработка, если исходный файл с расширением .csv
-        if str(path_to_file)[-4:] == ".csv" or str(path_to_file)[-4] == ".txt":
+        if str(path_to_file)[-4:] == ".csv" or str(path_to_file)[-4:] == ".txt":
             save_to = os.path.normpath(path_to_save + '\\' + name + ".dxf")
             key = self.dxf_version.itemText(self.dxf_version.currentIndex())
             coords = []
-            with open(path_to_file, 'r') as csv:
-                for line in csv:
-                    good_coord = ''
-                    for char in line:
-                        if char == ',':
-                            char = '.'
-                        good_coord += char
-                    coord = [float(coord) for coord in good_coord.strip().split(";")]
-                    coords.append(coord)
+            separator = self.separator.itemText(self.separator.currentIndex())
+            if separator == ',':
+                with open(path_to_file, 'r') as text_file:
+                    for line in text_file:
+                        good_coord = ''
+                        i = 0
+                        for char in line:
+                            if char == ',':
+                                if i != 1:
+                                    char = '.'
+                                i += 1
+                            print(i)
+                            good_coord += char
+                        print(good_coord)
+                        coord = [float(coord) for coord in good_coord.strip().split(separator)]
+                        coords.append(coord)
+            elif separator == ';':
+                with open(path_to_file, 'r') as text_file:
+                    for line in text_file:
+                        good_coord = ''
+                        i = 0
+                        for char in line:
+                            if char == ',':
+                                char = '.'
+                            print(i)
+                            good_coord += char
+                        print(good_coord)
+                        coord = [float(coord) for coord in good_coord.strip().split(separator)]
+                        coords.append(coord)
 
             points = tuple([coord for coord in coords])
             # Вывод в старые версии Autocad (R12)
@@ -203,7 +247,7 @@ class Window(QtGui.QMainWindow):
                 polyline = list(msp.query("LWPOLYLINE"))
 
             if len(polyline) > 1:
-                path_to_convert = os.path.normpath(path_to_save +"\\"+name+"_converted")
+                path_to_convert = os.path.normpath(path_to_save + "\\" + name + "_converted")
                 os.mkdir(path_to_convert)
                 i = 0
                 while i < len(polyline):
@@ -215,7 +259,7 @@ class Window(QtGui.QMainWindow):
                     i += 1
                 subprocess.Popen('explorer %s' % path_to_convert)
             elif len(polyline) == 1:
-                with open(path_to_save +"\\"+ name + "_converted.csv", "w") as conv:
+                with open(path_to_save + "\\" + name + "_converted.csv", "w") as conv:
                     for point in polyline[0]:
                         x = round(point[0], 2)
                         y = round(point[1], 2)
@@ -228,6 +272,7 @@ class Window(QtGui.QMainWindow):
         self.settings["lastdirectory"] = path_to_save
         with open('settings.json', 'w', encoding='utf-8') as file:
             file.write(json.dumps(self.settings, ensure_ascii=False))
+
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)

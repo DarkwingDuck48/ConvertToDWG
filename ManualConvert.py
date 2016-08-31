@@ -102,7 +102,7 @@ class Manual(QtGui.QMainWindow):
 
     def convert(self):
         points = []
-        if self.settings['lastdirectory'] == '':
+        if self.settings['lastdirectory'] == '' or os.path.exists(self.settings['lastdirectory']) is False:
             link = '/home'
         else:
             link = os.path.normpath(self.settings['lastdirectory'])
